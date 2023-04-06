@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="container mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {books.map((book) => (
-        <div key={book.id} className="bg-white rounded-lg shadow-md">
+        <div key={book.id} className="Card bg-red rounded-lg shadow-md">
           <img src={book.image_url} alt={book.title} className="rounded-t-lg" />
           <div className="p-4">
             <h2 className="text-xl font-bold mb-2">{book.title}</h2>
