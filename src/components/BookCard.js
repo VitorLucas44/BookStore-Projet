@@ -8,7 +8,7 @@ const BookCard = ({ book }) => {
         src={book.image_url}
         alt={book.title}
       />
-      <div className="p-4">
+      <div className="p-4 h-50">
         <h2 className="font-bold text-lg mb-2">{book.title}</h2>
         <p className="text-gray-700 mb-2">{book.authors}</p>
         <p className="text-gray-700">{book.genres}</p>

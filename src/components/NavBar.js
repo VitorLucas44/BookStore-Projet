@@ -1,66 +1,66 @@
-import { useState } from "react";
-import { FaBars, FaSearch, FaPhone, FaHeart } from "react-icons/fa";
+import React, { useState } from 'react'
+import {CgMenuLeft} from 'react-icons/cg'
+import {HiMagnifyingGlass} from 'react-icons/hi2'
+import {ImPhone} from 'react-icons/im'
+import {ImCross} from 'react-icons/im'
+import {AiFillHeart} from 'react-icons/ai'
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const NavBar = () => {
+    const [side, setSide] = useState('-left-[100%] ')
+    const [sideRight, setSideRight] = useState('-right-[100%] hidden')
 
-  const handleMenuClick = () => {
-    setIsOpen(!isOpen);
-  };
-
+    const swip = () => {
+        setSide('left-0')
+    }
+    const swipPanier = () =>{
+        setSideRight('right-0')
+    }
+    const croix = () =>{
+        setSide('-left-[100%]')
+    }
+    const croixfavoris = () =>{
+        setSideRight('-right-[100%] hidden')
+    }
   return (
-    <div className="bg-gray-100 py-4 px-6">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <div className="flex items-center">
-          <button className="text-gray-800 mr-4" onClick={handleMenuClick}>
-            <FaBars size={24} />
-          </button>
-          <h1 className="text-gray-800 text-2xl font-bold">BookStore</h1>
-        </div>
-        <div className="hidden sm:flex items-center">
-          <form>
-            <div className="relative text-gray-600 focus-within:text-gray-800">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-2">
-                <button type="submit" className="p-1 focus:outline-none focus:shadow-outline">
-                  <FaSearch />
-                </button>
-              </span>
-              <input
-                type="search"
-                className="py-2 text-sm text-gray-800 bg-gray-300 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
-                placeholder="Search Books"
-                autoComplete="off"
-              />
+    <>
+        <div className='flex justify-between'>
+            <div>
+                <h1 onClick={swip} className='text-3xl flex'><CgMenuLeft/>
+                BookShelf.</h1>
             </div>
-          </form>
-          <div className="flex items-center ml-6">
-            <button className="text-gray-800 mx-2">
-              <FaPhone size={24} />+123456789
-            </button>
-            <button className="text-gray-800">
-              <FaHeart size={24} />
-            </button>
-          </div>
-        </div>
-      </div>
-      {isOpen && (
-        <div className="fixed bg-white w-full h-full top-0 left-0 z-10">
-          <div className="max-w-6xl mx-auto py-4 flex items-center justify-between">
-            <ul className="text-gray-800 text-lg font-semibold">
-              <li className="py-4 border-b border-gray-300">Home</li>
-              <li className="py-4 border-b border-gray-300">Categories</li>
-              <li className="py-4 border-b border-gray-300">Best Sellers</li>
-              <li className="py-4">Contact Us</li>
-            </ul>
-            <div className="flex items-center">
-              <button className="text-gray-800 mr-4" onClick={handleMenuClick}>
-                Close
-              </button>
+            <div className='flex'>
+                <h2 className='text-xl'>
+                <HiMagnifyingGlass />
+                </h2>
+                <input placeholder='Search Book' type="text" className='border-solid' />
             </div>
-          </div>
+            <div className='flex'>
+                <span className='text-2xl'>
+                    <ImPhone/>
+                </span>
+                <p>01234567890</p>
+                <AiFillHeart className='mx-4 text-2xl' onClick={swipPanier} />
+            </div>
+            <div className={`absolute z-50 top-0 ${sideRight} duration-300 ease-in-out h-screen   bg-red-500`} style={{width: 300}}>
+            <div className='flex justify-between'>
+                    <h1 className='text-3xl'>
+                        Favoris
+                    </h1>
+                    <ImCross onClick={croixfavoris}/>
+                </div>
+            </div>
+            <div className= {`absolute z-50 top-0 ${side} w-20 duration-300 ease-in-out h-screen left bg-red-500`} style={{width: 300}}>
+                <div className='flex justify-between'>
+                    <h1 className='text-3xl'>
+                        ALL BOOK
+                    </h1>
+                    <ImCross onClick={croix}/>
+                </div>
+            </div>
         </div>
-      )}
-    </div>
-  );
+        
+    </>
+  )
 }
 
+export default NavBar
