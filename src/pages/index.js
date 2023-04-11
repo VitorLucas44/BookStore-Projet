@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import BookCard from "../components/BookCard";
-import Navbar from "@/components/NavBar";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -41,10 +40,8 @@ export default function Home() {
       setLoadMore(false);
     }
   };
-
   return (
     <div>
-        <Navbar/>
         <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
@@ -94,13 +91,22 @@ export default function Home() {
       </Swiper>
     </>
     <div className="section2">
-        <div className="livre1">
+        <div className="livre1 shadow-lg">
           <img src="https://cdn.discordapp.com/attachments/286906532476747786/1093909288440844449/livre1.PNG" alt="" />
           <div>
             <h1>SALE UP TOP 15%</h1>
             <h2>Innvation in education</h2>
             <h2>(Hardcover)</h2>
-            <p>starting at<span>$63.09</span></p>
+            <p>starting at<span> $63.09</span></p>
+          </div>
+        </div>
+        <div className="livre1 shadow-lg">
+          <img src="https://cdn.discordapp.com/attachments/286906532476747786/1095253937533239366/mockup.PNG" alt="" />
+          <div>
+            <h1>SALE UP TOP 15%</h1>
+            <h2>Innvation in education</h2>
+            <h2>(Hardcover)</h2>
+            <p>starting at<span> $63.09</span></p>
           </div>
         </div>
     </div>
@@ -136,6 +142,10 @@ export default function Home() {
           </button>
         </div>
       )}
+
+      <div className="lastsection">
+        
+      </div>
     </div>
   );
 }

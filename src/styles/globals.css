@@ -108,3 +108,55 @@
   color: white;
   font-size: 25px;
 }
+
+.section2{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.livre1{
+  display: flex;
+  margin-bottom: 2%;
+  overflow:hidden;
+  width: 500px;
+}
+
+
+.livre1 div{
+  margin: 7%;
+  width: 300px;
+}
+
+.livre1 h1{
+  color: green;
+  font-weight: 700;
+  margin: 1%;
+  margin-bottom: 5%;
+}
+
+
+.livre1 h2{
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.livre1 span{
+  color: green;
+  font-weight: 450;
+}
+
+.livre1 p{
+  margin-top: 5%;
+}
+
+.livre1 img{
+  width:100%;
+  height:auto;  
+}
+.livre1 img:hover{
+  width:100%;-webkit-transform:scale(1.0);
+  transform:scale(1.1);
+  -webkit-transition:1s ease-in-out;
+  transition:0.2s ease-in-out;
+}
+

@@ -4,6 +4,12 @@ import {HiMagnifyingGlass} from 'react-icons/hi2'
 import {ImPhone} from 'react-icons/im'
 import {ImCross} from 'react-icons/im'
 import {AiFillHeart} from 'react-icons/ai'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { removeTask } from '@/redux/slice/bookslice'
+import Link from 'next/link';
+
+
 
 const NavBar = () => {
     const [side, setSide] = useState('-left-[100%] ')
@@ -21,7 +27,13 @@ const NavBar = () => {
     const croixfavoris = () =>{
         setSideRight('-right-[100%] hidden')
     }
-  return (
+    const dispatch = useDispatch()
+    const favbooks = useSelector(state => state.booklist.panier)
+    const SuppFavs = (favbook) =>{
+        dispatch(removeTask(favbook))
+    }
+
+return (
     <>
         <div className='flex justify-between'>
             <div>
@@ -33,6 +45,7 @@ const NavBar = () => {
                 <HiMagnifyingGlass />
                 </h2>
                 <input placeholder='Search Book' type="text" className='border-solid' />
+                
             </div>
             <div className='flex'>
                 <span className='text-2xl'>
@@ -48,12 +61,40 @@ const NavBar = () => {
                     </h1>
                     <ImCross onClick={croixfavoris}/>
                 </div>
+                <div>
+                    {favbooks.map(favbook =>(
+                        <div key={favbook.id} className='flex'>
+                            <img src={favbook.image_url}
+                            alt="" width={50} />
+                            <p>{favbook.title}</p>
+                            <ImCross className='cursor-pointer' onClick={() => SuppFavs(favbook)}/>
+                            
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className= {`absolute z-50 top-0 ${side} w-20 duration-300 ease-in-out h-screen left bg-red-500`} style={{width: 300}}>
                 <div className='flex justify-between'>
                     <h1 className='text-3xl'>
                         ALL BOOK
                     </h1>
+                    <ul>
+        <li>
+          <Link legacyBehavior href="/">
+            <a>Inicio</a>
+          </Link>
+        </li>
+        <li>
+          <Link legacyBehavior href="/about">
+            <a>Acerca de</a>
+          </Link>
+        </li>
+        <li>
+          <Link legacyBehavior href="/contact">
+            <a>Contacto</a>
+          </Link>
+        </li>
+      </ul>
                     <ImCross onClick={croix}/>
                 </div>
             </div>
