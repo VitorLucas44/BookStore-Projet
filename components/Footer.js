@@ -2,7 +2,7 @@ import React from 'react'
 import { ImBook } from 'react-icons/im'
 import { IoHelpBuoySharp } from 'react-icons/io5'
 
-function Footer() {
+export function Footer() {
     return (
 <footer className='bg-blue-950 pt-12 px-20'>
             <div className='flex justify-around mx-5'>
@@ -29,7 +29,7 @@ function Footer() {
                 <p className='text-white px-2'>2023 All right deserved</p>
             </div>
         </footer>
-  )
+    )
 }
 
 export default Footer

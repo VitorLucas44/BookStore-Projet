@@ -267,3 +267,12 @@ background-color: green;
 .lastsection .sub div input{
   box-shadow: 2px 2px 2px rgba(172, 166, 166, 0.282);
 }
+
+
+.allbook{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

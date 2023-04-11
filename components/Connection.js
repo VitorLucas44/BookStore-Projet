@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 // import '../styles/connexion.css';
 
 // import slices
-import { connect } from '../redux/slice/guest';
+import { connect } from '../src/redux/slice/guest';
 
-const Connexion = () => {
+export  const Connexion = () => {
     const dispatch = useDispatch();
     const infoUser = useSelector(state => state.guest);
 

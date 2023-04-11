@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import BookCard from "../components/BookCard";
+import BookCard from "../../components/BookCard";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import {BsFacebook} from 'react-icons/bs'
 import {AiFillInstagram} from 'react-icons/ai'
 
@@ -14,6 +15,7 @@ import {AiFillLinkedin} from 'react-icons/ai'
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
+import Footer from "../../components/Footer";
 
 
 
@@ -169,6 +171,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

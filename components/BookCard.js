@@ -4,7 +4,7 @@ import { AiOutlineFullscreen } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { addTask } from "@/redux/slice/bookslice";
 
-const BookCard = ({ book }) => {
+export const BookCard = ({ book }) => {
   const router = useRouter()
     const DetailBook = (book) => {
         router.push(`/book/${book.id}`)
@@ -15,7 +15,7 @@ const BookCard = ({ book }) => {
         dispatch(addTask(book))
     };
   return (
-    <div className="card bg-white rounded-lg overflow-hidden shadow-lg">
+    <div className="card bg-white rounded-lg overflow-hidden shadow-lg m-1">
       <img
         className="w-full h-56 object-cover object-center"
         src={book.image_url}
