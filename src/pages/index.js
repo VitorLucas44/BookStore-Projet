@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import BookCard from "../components/BookCard";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import {BsFa} from 'react-icons/ai'
 
 // Import Swiper styles
 import "swiper/css";
@@ -143,8 +144,24 @@ export default function Home() {
         </div>
       )}
 
-      <div className="lastsection">
-        
+      <div className="lastsection shadow-xl">
+        <div>
+          <img src="https://cdn.discordapp.com/attachments/286906532476747786/1095257337050169454/drug.PNG" alt="" />
+          <div className="sub">
+            <h1>Join Our Community</h1>
+            <h2>Sign up & get 10% of your first book</h2>
+            <div><input type="text" placeholder="Your email" />
+            <button>Subscribe</button>
+            </div>
+            <div className="icon">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -81,17 +81,17 @@ return (
                     <ul>
         <li>
           <Link legacyBehavior href="/">
-            <a>Inicio</a>
+            <a>Modern</a>
           </Link>
         </li>
         <li>
           <Link legacyBehavior href="/about">
-            <a>Acerca de</a>
+            <a>Classic</a>
           </Link>
         </li>
         <li>
           <Link legacyBehavior href="/contact">
-            <a>Contacto</a>
+            <a>All Book</a>
           </Link>
         </li>
       </ul>

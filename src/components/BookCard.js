@@ -21,12 +21,12 @@ const BookCard = ({ book }) => {
         src={book.image_url}
         alt={book.title}
       />
-      <div className="p-4 h-50">
+      <div className="p-4 h-50 blabla">
         <h2 className="font-bold text-lg mb-2">{book.title}</h2>
         <p className="text-gray-700 mb-2">{book.authors}</p>
         <p className="text-gray-700">{book.genres}</p>
-        <button className='bg-green-400 text-center  m-1' onClick={() => DetailBook(book)} style={{width: 30, height: 30, borderRadius: '50%'}}><AiOutlineFullscreen className='mx-auto'/></button>
-        <button className='bg-green-400 rounded-lg m-1' onClick={() => AddFavs(book)} style={{width: 120, height: 45}}>add to favoris</button>
+        <button className='detail bg-green-400 text-center  m-1' onClick={() => DetailBook(book)} style={{width: 30, height: 30, borderRadius: '50%'}}><AiOutlineFullscreen className='mx-auto'/></button>
+        <button className='favorisbtn bg-green-400 rounded-lg m-1' onClick={() => AddFavs(book)} style={{width: 120, height: 45}}>add to favoris</button>
       </div>
     </div>
   );

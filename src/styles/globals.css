@@ -4,7 +4,18 @@
 
 .card{
   width: 300px;
-  height: 450px;
+  height: 500px;
+  position: relative;
+}
+
+.card button.favorisbtn{
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  background-color: green;
+  color: white;
 }
 
 .card img {
@@ -13,6 +24,31 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+
+.card:hover button.favorisbtn {
+  bottom: 20px;
+}
+
+.card .blabla button.detail{ 
+position: absolute;
+top: 80px;
+right: -50px;
+transform: translateY(-50%);
+background-color: #007bff;
+color: #fff;
+border: none;
+font-size: 16px;
+cursor: pointer;
+transition: all 0.3s ease;
+color: white;
+background-color: green;
+}
+.card:hover .blabla button.detail{
+  
+  right:20px
+}
+  
+
 
 .card h2 {
   color: #4a5568;
@@ -160,3 +196,71 @@
   transition:0.2s ease-in-out;
 }
 
+.lastsection{
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    margin-left: 300px;
+    height: 300px;
+    margin-bottom: 3%;
+}
+.lastsection img{
+  width: 450px;
+  height: 230px;
+  border-radius: 3px;
+}
+
+
+.lastsection div{
+    display: flex;
+    align-items: center;
+}
+
+.lastsection .sub{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 3%;
+}
+
+.lastsection .sub h1{
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+.lastsection .sub h2{
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+
+.lastsection .sub .icon button{
+  margin-left: 3%;
+  background-color: green;
+  color: white;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+}
+.lastsection .sub .icon button:hover{
+  
+  background-color: rgb(4, 61, 4);
+  
+}
+.lastsection .sub div input{
+  margin-bottom: 5%;
+  height: 33px;
+}
+.lastsection .sub div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lastsection .sub button{
+  background-color: green;
+  color: white;
+  height: 25px;
+}
+.lastsection .sub div input{
+  box-shadow: 2px 2px 2px rgba(172, 166, 166, 0.282);
+}
