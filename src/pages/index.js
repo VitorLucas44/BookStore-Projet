@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import BookCard from "../components/BookCard";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import {BsFa} from 'react-icons/ai'
+import {BsFacebook} from 'react-icons/bs'
+import {AiFillInstagram} from 'react-icons/ai'
+
+import {AiFillYoutube} from 'react-icons/ai'
+
+import {AiFillTwitterCircle} from 'react-icons/ai'
+import {AiFillLinkedin} from 'react-icons/ai'
 
 // Import Swiper styles
 import "swiper/css";
@@ -124,9 +130,9 @@ export default function Home() {
         ))}
       </div>
       {loadMore && (
-        <div className="flex my-8">
+        <div className="flex  justify-center my-8">
           <button
-            className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="py-2 px-4 bg-green-700 text-white rounded hover:bg-green-600"
             onClick={handleLoadMore}
           >
             Load more
@@ -136,7 +142,7 @@ export default function Home() {
       {visibleBooks.length < books.length && !loadMore && (
         <div className="flex justify-center my-8">
           <button
-            className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="py-2 px-4 bg-green-700 text-white rounded hover:bg-green-600"
             onClick={() => setLoadMore(true)}
           >
             Load more
@@ -154,11 +160,11 @@ export default function Home() {
             <button>Subscribe</button>
             </div>
             <div className="icon">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+            <button><BsFacebook/></button>
+            <button><AiFillInstagram/></button>
+            <button><AiFillLinkedin/></button>
+            <button><AiFillTwitterCircle/></button>
+            <button><AiFillYoutube/></button>
             </div>
           </div>
         </div>

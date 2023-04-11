@@ -54,9 +54,9 @@ return (
                 <p>01234567890</p>
                 <AiFillHeart className='mx-4 text-2xl' onClick={swipPanier} />
             </div>
-            <div className={`absolute z-50 top-0 ${sideRight} duration-300 ease-in-out h-screen   bg-red-500`} style={{width: 300}}>
+            <div className={`absolute z-50 top-0 ${sideRight} duration-300 ease-in-out h-screen   bg-white`} style={{width: 300}}>
             <div className='flex justify-between'>
-                    <h1 className='text-3xl'>
+                    <h1 className='text-3xl bg-slate-300 w-59'>
                         Favoris
                     </h1>
                     <ImCross onClick={croixfavoris}/>
@@ -73,11 +73,14 @@ return (
                     ))}
                 </div>
             </div>
-            <div className= {`absolute z-50 top-0 ${side} w-20 duration-300 ease-in-out h-screen left bg-red-500`} style={{width: 300}}>
+            <div className= {`absolute z-50 top-0 ${side} w-20 duration-300 ease-in-out h-screen left bg-white`} style={{width: 300}}>
                 <div className='flex justify-between'>
-                    <h1 className='text-3xl'>
+                    <h1 className='text-3xl bg-slate-300'>
                         ALL BOOK
                     </h1>
+                    <ImCross onClick={croix}/>
+                    </div>
+                    <div className='flex-col'>
                     <ul>
         <li>
           <Link legacyBehavior href="/">
@@ -95,8 +98,8 @@ return (
           </Link>
         </li>
       </ul>
-                    <ImCross onClick={croix}/>
-                </div>
+                    </div>
+
             </div>
         </div>
         

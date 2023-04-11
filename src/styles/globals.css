@@ -241,6 +241,9 @@ background-color: green;
   width: 25px;
   height: 25px;
   margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .lastsection .sub .icon button:hover{
   
