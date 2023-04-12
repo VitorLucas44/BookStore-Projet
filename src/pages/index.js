@@ -54,7 +54,7 @@ export default function Home() {
         <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
-          <div>
+          <div className="textcarou">
           <h2>Let's make the best investement</h2>
           <h1>There is no friends</h1>
           <h1>Loyal As Book</h1>
@@ -65,7 +65,7 @@ export default function Home() {
           <img src="https://cdn.discordapp.com/attachments/286906532476747786/1093872826596991086/citpark.PNG" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div>
+        <div className="txtcarou">
           <h2>Let's make the best investement</h2>
           <h1>There is no friends</h1>
           <h1>Loyal As Book</h1>
@@ -76,7 +76,7 @@ export default function Home() {
           <img src="https://cdn.discordapp.com/attachments/286906532476747786/1093882523517456404/strategy.PNG" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div>
+        <div className="txtcarou">
           <h2>Let's make the best investement</h2>
           <h1>There is no friends</h1>
           <h1>Loyal As Book</h1>
@@ -87,7 +87,7 @@ export default function Home() {
           <img src="https://cdn.discordapp.com/attachments/286906532476747786/1093882491003219998/book.PNG" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-        <div>
+        <div className="textcarou">
           <h2>Let's make the best investement</h2>
           <h1>There is no friends</h1>
           <h1>Loyal As Book</h1>

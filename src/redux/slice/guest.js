@@ -22,4 +22,3 @@ export const guest = createSlice({
 });
 
 export const { connect, disconnect } = guest.actions;
-
