@@ -71,20 +71,22 @@ function AllBook() {
 
     return (
         <div className="">
-        <div className="flex justify-center mb-4">
+            <div className="allbooks flex mt-20 m-5">
+                <div className=" flex flex-col">
+        <div className="flex justify-center mb-4 flex-col">
             <label className="mr-2">Filtre par catégories:</label>
-            <select value={selectedCategory} onChange={handleCategoryChange}>
+            <select className="bg-slate-200" value={selectedCategory} onChange={handleCategoryChange}>
             <option value="">All</option>
             <option value="Fiction">Fiction</option>
-            <option value="Nonfiction">Nonfiction</option>
+            <option value="Nonfiction">Non fiction</option>
             <option value="Mystery">Mystery</option>
             <option value="Fantasy">Fantasy</option>
             </select>
         </div>
     
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-4 flex-col">
             <label className="mr-2">Filtre par auteur:</label>
-            <select value={selectedAuthor} onChange={handleAuthorChange}>
+            <select className="bg-slate-200" value={selectedAuthor} onChange={handleAuthorChange}>
             <option value="">All</option>
             {authors.map((author) => (
                 <option key={author} value={author}>
@@ -96,6 +98,7 @@ function AllBook() {
     
         <div className="flex justify-center mb-4">
             <input
+            className="bg-slate-100 w-full border-solid rounded"
             type="text"
             placeholder="Search..."
             value={searchQuery}
@@ -104,11 +107,11 @@ function AllBook() {
         </div>
     
         <div className="flex justify-center mb-4">
-        <button onClick={handleSortOrderChange}>trier par A-Z</button>
+        <button className="bg-slate-200 text-black hover:text-green-800 hover:bg-slate-300 rounded-md w-1/2 h-10" onClick={handleSortOrderChange}>trier par A-Z</button>
         </div>
-    
+        </div>
         {loading ? (
-            <div className="flex items-center justify-center h-screen">
+            <div className="flex mx-auto items-center justify-end h-screen">
             <svg
                 className="animate-spin h-10 w-10 text-gray-500"
                 viewBox="0 0 24 24"
@@ -126,6 +129,7 @@ function AllBook() {
             ))}
             </div>
         )}
+        </div>
         <Footer />
         </div>
     );

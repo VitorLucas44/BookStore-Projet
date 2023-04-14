@@ -1,55 +1,64 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-const LoginPage = () => {
-    const [userEmail, setUserEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [isLogin, setIsLogin] = useState(true); // default to login page
+// import slices
+import { connect } from '../redux/slice/guest';
+import { setUsername, setEmail, setPassword, setRegistered } from '../redux/slice/signupSlice';
+import {IoBookSharp} from 'react-icons/io5'
 
-    const handleLogin = (event) => {
-        event.preventDefault();
-        // replace with your authentication logic
-        if (userEmail === 'book@123.com' && password === 'book123') {
-            alert('You are now logged in.');
-        } else {
-            alert('Invalid email or password. Please try again.');
+const Connexion = () => {
+    const dispatch = useDispatch();
+    const infoUser = useSelector(state => state.guest);
+    const infoSignup = useSelector(state => state.signup);
+
+    const username = useRef();
+    const email = useRef();
+    const password = useRef();
+
+    const connexionButton = () => {
+        if(username.current.value.length >= 3){
+            dispatch(connect(username.current.value));
         }
-    };
+    }
 
-    const handleRegister = (event) => {
-        event.preventDefault();
-        // replace with your registration logic
-        alert('Registration successful!');
-    };
-
-    const togglePage = () => {
-        setIsLogin(!isLogin);
-    };
+    const signupButton = () => {
+        console.log("username:", username.current.value);
+        console.log("email:", email.current.value);
+        console.log("password:", password.current.value);
+        dispatch(setUsername(username.current.value));
+        dispatch(setEmail(email.current.value));
+        dispatch(setPassword(password.current.value));
+        dispatch(setRegistered());
+    }
 
     return (
-        <div className="flex h-screen bg-gray-200">
-            <div className="m-auto">
-                <div className="max-w-md w-full bg-white shadow-md rounded-md p-8">
-                    <h1 className="text-center text-2xl font-bold">{isLogin ? 'Login' : 'Register'}</h1>
-                    <form onSubmit={isLogin ? handleLogin : handleRegister}>
-                        <div className="mt-4">
-                            <label className="block font-medium text-gray-700">Email</label>
-                            <input type="email" name="email" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" onChange={(e) => setUserEmail(e.target.value)} />
-                        </div>
-                        <div className="mt-4">
-                            <label className="block font-medium text-gray-700">Password</label>
-                            <input type="password" name="password" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50" onChange={(e) => setPassword(e.target.value)} />
-                        </div>
-                        <div className="mt-8">
-                            <button type="submit" className="w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-indigo focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">{isLogin ? 'Login' : 'Register'}</button>
-                        </div>
-                    </form>
-                    <div className="mt-8">
-                        <p className="text-center">{isLogin ? 'Don\'t have an account?' : 'Already have an account?'} <a className="text-indigo-500 underline cursor-pointer" onClick={togglePage}>{isLogin ? 'Register' : 'Login'}</a></p>
-                    </div>
+        <div className='connexion  w-3/4 mx-auto flex justify-center items-center'>
+        {(infoUser.connected || infoSignup.registered) ? (
+            <div className='flex flex-col justify-center align-center items-center mt-10'>
+                <h1 className='text-4xl  font-bold text-center'>
+                Bienvenue {infoUser.username || infoSignup.username}
+                </h1>
+                <div className='w-[200px] mt-5 relative h-[2px] mb-[50px] bg-green-400/50'><div className='h-[15px] absolute -top-2 left-[50%] w-[15px] bg-green-400/40 rotate-45'></div><div className='h-[15px] absolute -top-2 left-[45%] w-[15px] bg-green-400/40 rotate-45'></div></div>
+                <IoBookSharp className='text-9xl'/>
+            </div>
+            ) : (
+            <div className='mt-20 border-solid border-2'>
+                <h1 className='text-4xl  font-bold text-center'>Connexion</h1>
+                <div className='flex justify-center'>
+                    <div className='w-[200px] mt-5 relative h-[2px] mb-[50px] bg-green-400/50'><div className='h-[15px] absolute -top-2 left-[50%] w-[15px] bg-green-400/40 rotate-45'></div><div className='h-[15px] absolute -top-2 left-[45%] w-[15px] bg-green-400/40 rotate-45'></div></div>
+                </div>
+                <div className='flex flex-col mx-auto'>
+                <input type="text" placeholder='Username' ref={username} className=' rounded-lg border-white  my-2'/>
+                <input type="text" placeholder='Email' ref={email} className=' rounded-lg border-white  my-2'/>
+                <input type="password" placeholder='Password' ref={password} className=' rounded-lg border-white  mb-2'/>
+                <button className=' bg-green-600 font-bold px-2 rounded-full text-white h-10 mb-2' onClick={() => connexionButton()}>Connexion</button>
+                <button className=' bg-green-600 font-bold px-2 rounded-full text-white h-10 mb-2' onClick={() => signupButton()}>Inscription</button>
                 </div>
             </div>
+            )}
         </div>
-    );
-};
 
-export default LoginPage;
+    )
+}
+
+export default Connexion;

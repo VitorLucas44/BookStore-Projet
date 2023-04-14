@@ -1,58 +1,3 @@
-// import React, { useState } from 'react';
-// import { CgMenuLeft } from 'react-icons/cg';
-// import { HiMagnifyingGlass } from 'react-icons/hi2';
-// import { ImPhone } from 'react-icons/im';
-// import { ImCross } from 'react-icons/im';
-// import { AiFillHeart } from 'react-icons/ai';
-// import { useSelector } from 'react-redux';
-// import { useDispatch } from 'react-redux';
-// import { removeTask } from '@/redux/slice/bookslice';
-// import Link from 'next/link';
-// import LoginPage from '../src/pages/loginpage';
-
-// export const NavBar = () => {
-//     const [side, setSide] = useState('-left-[100%] ');
-//     const [sideRight, setSideRight] = useState('-right-[100%] hidden');
-
-//     const swip = () => {
-//         setSide('left-0');
-//     };
-//     const swipPanier = () => {
-//         setSideRight('right-0');
-//     };
-//     const croix = () => {
-//         setSide('-left-[100%]');
-//     };
-//     const croixfavoris = () => {
-//         setSideRight('-right-[100%] hidden');
-//     };
-//     const dispatch = useDispatch();
-//     const favbooks = useSelector((state) => state.booklist.panier);
-//     const SuppFavs = (favbook) => {
-//         dispatch(removeTask(favbook));
-//     };
-
-//     return (
-//         <>
-//         <div className='navbar flex justify-between'>
-//             <div>
-//             <h1 onClick={swip} className='text-3xl flex cursor-pointer'>
-//                 <CgMenuLeft />
-//                 <a className='ml-3' href="/">BookShelf.</a>
-//             </h1>
-//             </div>
-//             <div className='flex'>
-//             <h2 className='text-xl'>
-//                 <HiMagnifyingGlass />
-//             </h2>
-//             <input placeholder='Search Book' type='text' className='border-solid' />
-//             </div>
-//             <div className='flex'>
-//             <span className='text-2xl'>
-//                 <ImPhone />
-//             </span>
-//             <p>01234567890</p>
-//             <a href="/loginpage">login</a>
 import React, { useState } from 'react';
 import { CgMenuLeft } from 'react-icons/cg';
 import { HiMagnifyingGlass } from 'react-icons/hi2';
@@ -64,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { removeTask } from '@/redux/slice/bookslice';
 import Link from 'next/link';
 import LoginPage from '../src/pages/loginpage';
+import {CgProfile} from 'react-icons/cg'
 
 export const NavBar = () => {
     const [side, setSide] = useState('-left-[100%] ');
@@ -91,7 +37,7 @@ export const NavBar = () => {
 
     return (
         <>
-        <div className='navbar flex justify-between'>
+        <div className='navbar flex justify-between align-center items-center'>
             <div>
             <h1 onClick={swip} className='text-3xl flex cursor-pointer'>
                 <CgMenuLeft />
@@ -99,21 +45,23 @@ export const NavBar = () => {
             </h1>
             </div>
             <div className='flex'>
-            <h2 className='text-xl'>
+            <h2 className='text-xl searchlogo'>
                 <HiMagnifyingGlass />
             </h2>
-            <input placeholder='Search Book' type='text' className='border-solid' />
+            <input placeholder='Search Book' type='text' className='border-solid border-2 border-black-600 bg-slate-300 rounded' />
             </div>
-            <div className='flex'>
-            <span className='text-2xl'>
+            <div className='flex divcoeur'>
+            <span className='text-2xl phone'>
                 <ImPhone />
             </span>
-            <p>01234567890</p>
-            {userEmail ? ( // si l'utilisateur est connecté, afficher l'adresse e-mail, sinon afficher le lien de connexion
-              <p>{userEmail}</p>
-            ) : (
-              <a href="/loginpage">login</a>
-            )}
+            <p className='mr-5'>01234567890</p>
+            {userEmail ? (
+                <p>{userEmail}</p>
+                ) : (
+                <Link legacyBehavior href="/loginpage">
+                <a className='text-xl flex text-center align-center items-center'><CgProfile/></a>
+                </Link>
+                )}
             <AiFillHeart className='mx-4 text-2xl cursor-pointer' onClick={swipPanier} />
             </div>
             <div
@@ -168,6 +116,6 @@ export const NavBar = () => {
             
         </>
     )
-    }
+}
 
 export default NavBar

@@ -238,8 +238,8 @@ background-color: green;
   background-color: green;
   color: white;
   border-radius: 100%;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   margin-left: 20px;
   display: flex;
   justify-content: center;
@@ -290,9 +290,6 @@ body{
     margin-left: 20px;
     width: 2%;
   }
-  .navbar{
-    flex-direction: column;
-  }
   .swiper-slide.swiper-slide-active{
     flex-direction: column;
   }
@@ -308,6 +305,9 @@ body{
   }
   .textcarou{
     text-align: center;
+  }
+  .textcarou button{
+    width: 100px;
   }
   .section2{
     flex-direction: column;
@@ -326,5 +326,82 @@ body{
   .txtcarou{
     text-align: center;
   }
-  
+  .navbar input{
+    display: none;
+  }
+  .navbar p{
+    display: none;
+  }
+  .searchlogo{
+    display: none;
+  }
+  .phone{
+    display: none;
+  }
+  .divcoeur{
+    justify-content: space-between;
+  }
+  .lastsection .sub .icon button{
+    width: 25px;
+    height: 25px;
+  }
+  .pagedescription{
+    flex-direction: column;
+  }
+  .description{
+    display: flex;
+    flex-wrap: wrap
+  }
+  .shadow{
+    width: 100%;
+  }
+  .allbooks{
+    flex-direction: column;
+  }
+
+  .desmots{
+    margin-left: 0px;
+    text-align: center;
+  }
+  .desmots p{
+    margin-left: 0px;
+    text-align: center;
+    padding: 5px;
+  }
+  .lastsection{
+    display: none;
+  }
+  .footer{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+.lastsection{
+  width: 100%;
+  margin-left: 0px;
+}
+.section2{
+  flex-direction: column;
+  align-items: center;
+}
+.desmots{
+  margin-left: 10px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+
+  .lastsection{
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+
+  .lastsection{
+    display: none;
+  }
 }
